@@ -1,6 +1,6 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #f0f0f0;
+    background-color: gray;
     color: #333;
     text-align: center;
     margin: 0;
@@ -68,4 +68,12 @@ button:hover {
 
 .download-btn:hover {
     background-color: #0056b3;
+}
+
+.logo {
+    width: 100px; 
+    height: 100px; 
+    border-radius: 50%;
+    display: block;
+    margin: 0 auto 20px;
 }
