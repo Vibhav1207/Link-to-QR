@@ -1,0 +1,37 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+}
+
+.container {
+    text-align: center;
+    padding: 2rem;
+}
+
+.url-input {
+    padding: 0.5rem;
+    font-size: 1.2rem;
+    width: 300px;
+}
+
+.generate-btn {
+    margin-left: 1rem;
+    padding: 0.5rem 1rem;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+.qr-code {
+    margin-top: 2rem;
+}
+
+.download-btn {
+    display: block;
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+    background-color: #0070f3;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
