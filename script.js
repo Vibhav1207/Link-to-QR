@@ -3,17 +3,17 @@ $(document).ready(function() {
         event.preventDefault();
         const mapLink = $('#mapLink').val();
         
-        // Clear previous QR code
+       
         $('#qrCodeContainer').empty();
 
-        // Generate QR Code
+       
         $('#qrCodeContainer').qrcode({
             text: mapLink,
-            width: 200, // Increased size for better scanning
+            width: 200,
             height: 200
         });
 
-        // Show download link
+       
         const canvas = $('#qrCodeContainer canvas')[0];
         const downloadLink = $('#downloadLink');
         downloadLink.attr('href', canvas.toDataURL('image/png'));
