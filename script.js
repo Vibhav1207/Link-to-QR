@@ -9,8 +9,8 @@ $(document).ready(function() {
         // Generate QR Code
         $('#qrCodeContainer').qrcode({
             text: mapLink,
-            width: 128,
-            height: 128
+            width: 200, // Increased size for better scanning
+            height: 200
         });
 
         // Show download link
