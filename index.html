@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR Code Generator</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.qrcode/1.0/jquery.qrcode.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Google Maps Link to QR Code Generator</h1>
+        <form id="qrForm">
+            <label for="mapLink">Enter Google Maps Link:</label>
+            <input type="text" id="mapLink" required placeholder="https://maps.google.com/...">
+            <button type="submit">Generate QR Code</button>
+        </form>
+        <div id="qrCodeContainer"></div>
+        <a id="downloadLink" style="display:none;">Download QR Code</a>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
