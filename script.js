@@ -26,7 +26,7 @@ $(document).ready(function() {
 
         // Load the fixed logo
         const logo = new Image();
-        const logoSize = 60; // Size of the logo
+        const logoSize = 120; // Size of the logo
 
         logo.onload = function() {
             // Draw the logo in the center of the QR code
