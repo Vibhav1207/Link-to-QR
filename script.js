@@ -44,8 +44,7 @@ $(document).ready(function() {
             downloadLink .show();
         };
 
-        // Set the source of the logo image (make sure the logo.png is in the root directory)
-        logo.src = 'icon.png'; // Replace 'logo.png' with the actual filename of your logo
+        logo.src = 'Uday.png';
     });
 }); 
 
