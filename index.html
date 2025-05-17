@@ -12,10 +12,36 @@
     <div class="container">
         <h1>Link to QR Code Generator</h1>
         <form id="qrForm">
-            <label for="mapLink">Enter Link:</label>
+            <label for="mapLink">Enter Link for QR Code:</label>
             <input type="text" id="mapLink" required placeholder="https://maps.google.com/...">
             <button type="submit">Generate QR Code</button>
         </form>
+       <!-- <div class="shortener-box">
+            <label for="shortenInput">Enter Link to Shorten:</label>
+            <div style="display: flex; gap: 10px;">
+                <input type="text" id="shortenInput" placeholder="Paste link to shorten">
+                <button type="button" id="shortenBtn">Shorten Link</button>
+            </div>
+            <input type="text" id="shortLink" placeholder="Shortened link will appear here" readonly style="margin-top:10px;">
+        </div> -->
+        <div class="color-picker-box">
+            <label for="colorPicker">Select QR Code Color:</label>
+            <input type="color" id="colorPicker" value="#000000">
+        </div>
+        <div class="gradient-picker-box">
+            <label>Or create a gradient QR code:</label>
+            <div style="display: flex; gap: 10px; align-items: center;">
+                <input type="color" id="gradientColor1" value="#00f2fe">
+                <span>to</span>
+                <input type="color" id="gradientColor2" value="#4facfe">
+                <select id="gradientDirection">
+                    <option value="horizontal">Horizontal</option>
+                    <option value="vertical">Vertical</option>
+                    <option value="diagonal">Diagonal</option>
+                </select>
+                <button type="button" id="applyGradient">Apply Gradient</button>
+            </div>
+        </div>
         <div id="qrCodeContainer"></div>
         <a id="downloadLink" style="display:none;">Download QR Code</a>
     </div>
