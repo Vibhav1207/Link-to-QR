@@ -75,7 +75,7 @@ $(document).ready(function() {
             downloadLink.attr('download', 'qr_code_with_logo.png');
             downloadLink.show();
         };
-        logo.src = 'images.png';
+        logo.src = 'Uday.png';
     }
 
     function hexToRgb(hex) {
