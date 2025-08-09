@@ -75,7 +75,7 @@ $(document).ready(function() {
             downloadLink.attr('download', 'qr_code_with_logo.png');
             downloadLink.show();
         };
-        logo.src = 'SEDC.jpg';
+        logo.src = 'SEDC.png';
     }
 
     function hexToRgb(hex) {
