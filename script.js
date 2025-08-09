@@ -75,7 +75,7 @@ $(document).ready(function() {
             downloadLink.attr('download', 'qr_code_with_logo.png');
             downloadLink.show();
         };
-        logo.src = 'Uday.png';
+        logo.src = 'SEDC.jpg';
     }
 
     function hexToRgb(hex) {
