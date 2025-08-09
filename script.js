@@ -97,19 +97,29 @@ $(document).ready(function() {
         const mapLink = $('#mapLink').val();
         const color = $('#colorPicker').val();
 
+        if (!/^https?:\/\//i.test(mapLink)) {
+            alert("Please enter a valid URL starting with 'http://' or 'https://'");
+            return;
+        }
+
         generateQRCode(mapLink, color, false);
     });
 
     // Live update for solid color QR code
     $('#colorPicker').on('input', function() {
         const mapLink = $('#mapLink').val();
-      
+        if (/^https?:\/\//i.test(mapLink)) {
+            generateQRCode(mapLink, $(this).val(), false);
+        }
     });
 
     // Gradient QR code
     $('#applyGradient').on('click', function() {
         const mapLink = $('#mapLink').val();
-     
+        if (!/^https?:\/\//i.test(mapLink)) {
+            alert("Please enter a valid URL starting with 'http://' or 'https://'");
+            return;
+        }
         const color1 = $('#gradientColor1').val();
         const color2 = $('#gradientColor2').val();
         const direction = $('#gradientDirection').val();
