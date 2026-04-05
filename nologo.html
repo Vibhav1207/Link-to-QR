@@ -29,6 +29,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.qrcode/1.0/jquery.qrcode.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
 </head>
 <body class="bg-zinc-950 text-zinc-100 font-sans min-h-screen selection:bg-brand selection:text-zinc-950 overflow-x-hidden antialiased flex flex-col md:flex-row relative">
     
@@ -148,14 +149,75 @@
         </div>
     </div>
     
+    <!-- April Fools Popup -->
+    <div id="aprilFoolsPopup" class="fixed inset-0 z-[100] hidden flex-col items-center justify-center bg-black/90 backdrop-blur-md px-4">
+        <div class="bg-zinc-900 border border-brand p-8 shadow-2xl rounded-sm max-w-sm w-full text-center space-y-6 transform animate-bounce-short">
+            <div class="w-16 h-16 bg-zinc-950 border border-zinc-800 rounded-full flex items-center justify-center mx-auto mb-4">
+                <svg class="w-8 h-8 text-brand" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" /></svg>
+            </div>
+            <h2 class="text-xl md:text-2xl font-bold font-mono text-white mb-2">PREMIUM REQUIRED</h2>
+            <p class="text-zinc-400 text-sm">To unlock and generate this high-quality QR code matrix, please pay <span class="font-bold text-brand text-lg">10 RS</span> to:</p>
+            <code class="block mt-4 p-4 bg-zinc-950 border border-zinc-800 text-brand rounded-sm tracking-widest text-sm md:text-base font-bold shadow-inner">
+                vibhavpatel@fam
+            </code>
+            <div class="relative w-full h-1 bg-zinc-800 overflow-hidden rounded-full mt-8">
+                <div id="popupProgress" class="absolute top-0 left-0 h-full bg-brand rounded-full transition-all ease-linear" style="width: 100%; transition-duration: 10s;"></div>
+            </div>
+            <p class="text-[10px] text-zinc-500 uppercase tracking-widest mt-4">Verifying Payment... <span id="countdownText" class="text-zinc-300 font-bold">10</span>s</p>
+        </div>
+    </div>
+
     <script src="script-nologo.js"></script>
     <script>
         // Hide placeholder visually when QR logic executes
-        $('#qrForm').on('submit', function() {
-            setTimeout(() => { if($('#qrCodeContainer').children().length > 0) $('#qrPlaceholder').css('opacity', '0'); }, 100);
+        $('#qrForm').on('submit', function () {
+            // April Fools popup logic
+            $('#aprilFoolsPopup').removeClass('hidden').addClass('flex');
+            
+            // start progress bar animation
+            setTimeout(() => {
+                $('#popupProgress').css('width', '0%');
+            }, 50);
+            
+            let timeLeft = 10;
+            const timer = setInterval(() => {
+                timeLeft--;
+                $('#countdownText').text(timeLeft);
+                if(timeLeft <= 0) {
+                    clearInterval(timer);
+                    
+                    // April Fools Reveal!
+                    $('#aprilFoolsPopup h2').text('APRIL FOOLS! 🎉').removeClass('text-white').addClass('text-brand text-4xl mt-8');
+                    $('#aprilFoolsPopup p, #aprilFoolsPopup code, #aprilFoolsPopup .relative').hide();
+                    
+                    // Pop Confetti
+                    confetti({
+                        particleCount: 150,
+                        spread: 100,
+                        origin: { y: 0.6 },
+                        zIndex: 200
+                    });
+
+                    setTimeout(() => {
+                        $('#aprilFoolsPopup').removeClass('flex').addClass('hidden');
+                        
+                        // Reset for next time (in case they generate again)
+                        $('#aprilFoolsPopup h2').text('PREMIUM REQUIRED').removeClass('text-brand text-4xl mt-8').addClass('text-white');
+                        $('#aprilFoolsPopup p, #aprilFoolsPopup code, #aprilFoolsPopup .relative').show();
+                        $('#popupProgress').css({ 'transition-duration': '0s', 'width': '100%' });
+                        setTimeout(() => {
+                            $('#popupProgress').css('transition-duration', '10s');
+                            $('#countdownText').text('10');
+                        }, 50);
+                    }, 4000);
+                }
+            }, 1000);
+
+            setTimeout(() => { if ($('#qrCodeContainer').children().length > 0) $('#qrPlaceholder').css('opacity', '0'); }, 100);
         });
-        $('#applyGradient').on('click', function() {
-            setTimeout(() => { if($('#qrCodeContainer').children().length > 0) $('#qrPlaceholder').css('opacity', '0'); }, 100);
+
+        $('#applyGradient').on('click', function () {
+            setTimeout(() => { if ($('#qrCodeContainer').children().length > 0) $('#qrPlaceholder').css('opacity', '0'); }, 100);
         });
     </script>
 </body>
