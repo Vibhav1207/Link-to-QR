@@ -30,8 +30,16 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.qrcode/1.0/jquery.qrcode.min.js"></script>
 </head>
-<body class="bg-zinc-950 text-zinc-100 font-sans min-h-screen selection:bg-brand selection:text-zinc-950 overflow-x-hidden antialiased flex flex-col md:flex-row">
+<body class="bg-zinc-950 text-zinc-100 font-sans min-h-screen selection:bg-brand selection:text-zinc-950 overflow-x-hidden antialiased flex flex-col md:flex-row relative">
     
+    <!-- Floating Navbar -->
+    <nav class="absolute top-4 left-4 right-4 z-50 flex items-center justify-center pointer-events-none">
+        <div class="pointer-events-auto flex gap-1 p-1.5 bg-zinc-900/80 backdrop-blur border border-zinc-800 rounded-sm shadow-xl">
+            <a href="/" class="px-6 py-2 text-[10px] md:text-xs font-mono tracking-widest uppercase font-bold transition-all bg-brand text-zinc-950 shadow-[0_0_15px_rgba(192,255,0,0.2)]">Standard</a>
+            <a href="nologo" class="px-6 py-2 text-[10px] md:text-xs font-mono tracking-widest uppercase font-bold transition-all text-zinc-500 hover:text-zinc-100 hover:bg-zinc-800/80">No Logo</a>
+        </div>
+    </nav>
+
     <!-- Left Asymmetric Panel (70%) -->
     <div class="w-full md:w-[70%] p-8 md:p-16 lg:p-24 flex flex-col justify-center border-r border-zinc-900 min-h-[60vh] md:min-h-screen relative z-10">
         <!-- Decorative Header -->
