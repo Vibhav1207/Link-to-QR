@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" class="dark">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -26,22 +27,31 @@
             }
         }
     </script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;700&display=swap"
+        rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.qrcode/1.0/jquery.qrcode.min.js"></script>
 </head>
-<body class="bg-zinc-950 text-zinc-100 font-sans min-h-screen selection:bg-brand selection:text-zinc-950 overflow-x-hidden antialiased flex flex-col md:flex-row relative">
-    
+
+<body
+    class="bg-zinc-950 text-zinc-100 font-sans min-h-screen selection:bg-brand selection:text-zinc-950 overflow-x-hidden antialiased flex flex-col md:flex-row relative">
+
     <!-- Floating Navbar -->
     <nav class="absolute top-4 left-4 right-4 z-50 flex items-center justify-center pointer-events-none">
-        <div class="pointer-events-auto flex gap-1 p-1.5 bg-zinc-900/80 backdrop-blur border border-zinc-800 rounded-sm shadow-xl">
-            <a href="/" class="px-6 py-2 text-[10px] md:text-xs font-mono tracking-widest uppercase font-bold transition-all bg-brand text-zinc-950 shadow-[0_0_15px_rgba(192,255,0,0.2)]">Standard</a>
-            <a href="nologo" class="px-6 py-2 text-[10px] md:text-xs font-mono tracking-widest uppercase font-bold transition-all text-zinc-500 hover:text-zinc-100 hover:bg-zinc-800/80">No Logo</a>
+        <div
+            class="pointer-events-auto flex gap-1 p-1.5 bg-zinc-900/80 backdrop-blur border border-zinc-800 rounded-sm shadow-xl">
+            <a href="/"
+                class="px-6 py-2 text-[10px] md:text-xs font-mono tracking-widest uppercase font-bold transition-all bg-brand text-zinc-950 shadow-[0_0_15px_rgba(192,255,0,0.2)]">Standard</a>
+            <a href="nologo.html"
+                class="px-6 py-2 text-[10px] md:text-xs font-mono tracking-widest uppercase font-bold transition-all text-zinc-500 hover:text-zinc-100 hover:bg-zinc-800/80">No
+                Logo</a>
         </div>
     </nav>
 
     <!-- Left Asymmetric Panel (70%) -->
-    <div class="w-full md:w-[70%] p-8 md:p-16 lg:p-24 flex flex-col justify-center border-r border-zinc-900 min-h-[60vh] md:min-h-screen relative z-10">
+    <div
+        class="w-full md:w-[70%] p-8 md:p-16 lg:p-24 flex flex-col justify-center border-r border-zinc-900 min-h-[60vh] md:min-h-screen relative z-10">
         <!-- Decorative Header -->
         <div class="mb-12 space-y-4">
             <p class="font-mono text-brand text-xs uppercase tracking-[0.2em] relative inline-block">
@@ -52,7 +62,8 @@
                 QR <span class="text-zinc-600 block xl:inline text-3xl xl:text-6xl mt-2 xl:mt-0">Generator</span>
             </h1>
             <p class="text-zinc-400 mt-4 max-w-lg font-light leading-relaxed">
-                Transform any digital destination into an instant physical portal. Minimal tracking, high contrast mapping.
+                Transform any digital destination into an instant physical portal. Minimal tracking, high contrast
+                mapping.
             </p>
         </div>
 
@@ -60,60 +71,87 @@
         <div class="space-y-10 w-full max-w-2xl text-sm md:text-base">
             <form id="qrForm" class="space-y-6 group">
                 <div class="space-y-2">
-                    <label for="mapLink" class="font-mono pt-4 text-[10px] sm:text-xs tracking-wider text-zinc-500 uppercase flex items-center justify-between">
+                    <label for="mapLink"
+                        class="font-mono pt-4 text-[10px] sm:text-xs tracking-wider text-zinc-500 uppercase flex items-center justify-between">
                         <span>Payload Data URL</span>
-                        <span class="w-2 h-2 rounded-sm bg-zinc-800 group-focus-within:bg-brand transition-colors duration-500"></span>
+                        <span
+                            class="w-2 h-2 rounded-sm bg-zinc-800 group-focus-within:bg-brand transition-colors duration-500"></span>
                     </label>
-                    <div class="relative flex items-center group-focus-within:ring-1 ring-brand transition-all duration-300 rounded-sm">
+                    <div
+                        class="relative flex items-center group-focus-within:ring-1 ring-brand transition-all duration-300 rounded-sm">
                         <div class="absolute left-4 p-2 text-zinc-600 group-focus-within:text-brand transition-colors">
-                            <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" /></svg>
+                            <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" />
+                            </svg>
                         </div>
-                        <input type="text" id="mapLink" required placeholder="https://maps.google.com/..." 
+                        <input type="text" id="mapLink" required placeholder="https://maps.google.com/..."
                             class="w-full bg-zinc-900/50 backdrop-blur-sm border border-zinc-800 text-white pl-12 pr-4 py-4 md:py-5 rounded-sm focus:outline-none focus:border-brand focus:bg-zinc-900 transition-all font-mono placeholder-zinc-700 shadow-inner">
                     </div>
                 </div>
-                
-                <button type="submit" 
+
+                <button type="submit"
                     class="w-full py-4 md:py-5 px-6 bg-zinc-100 hover:bg-brand text-zinc-950 font-bold tracking-widest text-xs sm:text-sm uppercase rounded-sm border border-transparent transition-all duration-300 transform active:scale-[0.99] flex items-center justify-center gap-3 group/btn">
                     Initialize Matrix
-                    <svg class="w-4 h-4 transform group-hover/btn:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+                    <svg class="w-4 h-4 transform group-hover/btn:translate-x-1 transition-transform" fill="none"
+                        viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                    </svg>
                 </button>
             </form>
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8 border-t border-zinc-900 pt-10">
                 <!-- Color Single -->
                 <div class="color-picker-box flex flex-col space-y-3">
-                    <label for="colorPicker" class="font-mono text-[10px] sm:text-xs tracking-wider text-zinc-500 uppercase">Monochrome Hue</label>
-                    <div class="flex items-center space-x-4 bg-zinc-900/40 p-3 lg:p-4 rounded-sm border border-zinc-800/50 hover:border-zinc-700 transition-colors group cursor-pointer h-full">
-                         <div class="relative w-10 h-10 rounded-sm overflow-hidden flex-shrink-0 ring-1 ring-zinc-700 group-hover:ring-brand transition-colors">
-                             <input type="color" id="colorPicker" value="#000000" class="absolute -top-4 -left-4 w-20 h-20 cursor-pointer">
-                         </div>
-                         <span class="font-mono text-[10px] sm:text-xs text-zinc-400">Select Base Color</span>
+                    <label for="colorPicker"
+                        class="font-mono text-[10px] sm:text-xs tracking-wider text-zinc-500 uppercase">Monochrome
+                        Hue</label>
+                    <div
+                        class="flex items-center space-x-4 bg-zinc-900/40 p-3 lg:p-4 rounded-sm border border-zinc-800/50 hover:border-zinc-700 transition-colors group cursor-pointer h-full">
+                        <div
+                            class="relative w-10 h-10 rounded-sm overflow-hidden flex-shrink-0 ring-1 ring-zinc-700 group-hover:ring-brand transition-colors">
+                            <input type="color" id="colorPicker" value="#000000"
+                                class="absolute -top-4 -left-4 w-20 h-20 cursor-pointer">
+                        </div>
+                        <span class="font-mono text-[10px] sm:text-xs text-zinc-400">Select Base Color</span>
                     </div>
                 </div>
 
                 <!-- Gradient Pickers -->
                 <div class="gradient-picker-box flex flex-col space-y-3">
-                    <label class="font-mono text-[10px] sm:text-xs tracking-wider text-zinc-500 uppercase">Gradient Override</label>
-                    <div class="space-y-4 bg-zinc-900/40 p-3 lg:p-4 rounded-sm border border-zinc-800/50 h-full flex flex-col justify-between">
+                    <label class="font-mono text-[10px] sm:text-xs tracking-wider text-zinc-500 uppercase">Gradient
+                        Override</label>
+                    <div
+                        class="space-y-4 bg-zinc-900/40 p-3 lg:p-4 rounded-sm border border-zinc-800/50 h-full flex flex-col justify-between">
                         <div class="flex items-center justify-between gap-3">
-                            <div class="relative w-8 h-8 rounded-sm overflow-hidden flex-shrink-0 ring-1 ring-zinc-700 hover:ring-brand transition-colors">
-                                <input type="color" id="gradientColor1" value="#00f2fe" class="absolute -top-4 -left-4 w-16 h-16 cursor-pointer">
+                            <div
+                                class="relative w-8 h-8 rounded-sm overflow-hidden flex-shrink-0 ring-1 ring-zinc-700 hover:ring-brand transition-colors">
+                                <input type="color" id="gradientColor1" value="#00f2fe"
+                                    class="absolute -top-4 -left-4 w-16 h-16 cursor-pointer">
                             </div>
                             <span class="text-zinc-600 font-mono text-[10px] sm:text-xs">to</span>
-                            <div class="relative w-8 h-8 rounded-sm overflow-hidden flex-shrink-0 ring-1 ring-zinc-700 hover:ring-brand transition-colors">
-                                <input type="color" id="gradientColor2" value="#4facfe" class="absolute -top-4 -left-4 w-16 h-16 cursor-pointer">
+                            <div
+                                class="relative w-8 h-8 rounded-sm overflow-hidden flex-shrink-0 ring-1 ring-zinc-700 hover:ring-brand transition-colors">
+                                <input type="color" id="gradientColor2" value="#4facfe"
+                                    class="absolute -top-4 -left-4 w-16 h-16 cursor-pointer">
                             </div>
                         </div>
-                        
+
                         <div class="flex items-center gap-2">
-                             <select id="gradientDirection" class="bg-zinc-950 border border-zinc-800 text-zinc-300 text-[10px] sm:text-xs font-mono py-2 px-3 rounded-sm focus:border-brand focus:outline-none flex-grow appearance-none cursor-pointer">
+                            <select id="gradientDirection"
+                                class="bg-zinc-950 border border-zinc-800 text-zinc-300 text-[10px] sm:text-xs font-mono py-2 px-3 rounded-sm focus:border-brand focus:outline-none flex-grow appearance-none cursor-pointer">
                                 <option value="horizontal">Horizontal</option>
                                 <option value="vertical">Vertical</option>
                                 <option value="diagonal">Diagonal</option>
                             </select>
-                            <button type="button" id="applyGradient" class="bg-zinc-800 hover:bg-brand hover:text-zinc-950 text-white p-2 rounded-sm transition-colors border border-zinc-700 hover:border-brand flex-shrink-0" title="Apply Gradient">
-                                <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
+                            <button type="button" id="applyGradient"
+                                class="bg-zinc-800 hover:bg-brand hover:text-zinc-950 text-white p-2 rounded-sm transition-colors border border-zinc-700 hover:border-brand flex-shrink-0"
+                                title="Apply Gradient">
+                                <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M13 10V3L4 14h7v7l9-11h-7z" />
+                                </svg>
                             </button>
                         </div>
                     </div>
@@ -123,40 +161,54 @@
     </div>
 
     <!-- Right Asymmetric Panel (30%) -->
-    <div class="w-full md:w-[30%] bg-zinc-900 relative min-h-[40vh] md:min-h-screen flex flex-col items-center justify-center border-t md:border-t-0 md:border-l border-zinc-800 p-8 overflow-hidden">
+    <div
+        class="w-full md:w-[30%] bg-zinc-900 relative min-h-[40vh] md:min-h-screen flex flex-col items-center justify-center border-t md:border-t-0 md:border-l border-zinc-800 p-8 overflow-hidden">
         <!-- Background Grid -->
-        <div class="absolute inset-0 z-0 opacity-20 pointer-events-none" style="background-image: radial-gradient(circle at 2px 2px, #3f3f46 1px, transparent 0); background-size: 24px 24px;"></div>
-        
-        <p class="font-mono text-xs uppercase tracking-[0.2em] text-zinc-600 absolute top-8 right-8 z-10 hidden md:block">Output_Node</p>
-        
+        <div class="absolute inset-0 z-0 opacity-20 pointer-events-none"
+            style="background-image: radial-gradient(circle at 2px 2px, #3f3f46 1px, transparent 0); background-size: 24px 24px;">
+        </div>
+
+        <p
+            class="font-mono text-xs uppercase tracking-[0.2em] text-zinc-600 absolute top-8 right-8 z-10 hidden md:block">
+            Output_Node</p>
+
         <!-- The QR Block -->
         <div class="relative z-10 flex flex-col items-center">
-            <div class="bg-white p-8 rounded-sm shadow-2xl flex items-center justify-center min-w-[240px] min-h-[240px] border border-zinc-800 relative after:content-[''] after:absolute after:-bottom-4 after:-right-4 after:w-full after:h-full after:border-r after:border-b after:border-brand/40 after:rounded-sm transition-transform duration-500 hover:-translate-y-2 group">
+            <div
+                class="bg-white p-8 rounded-sm shadow-2xl flex items-center justify-center min-w-[240px] min-h-[240px] border border-zinc-800 relative after:content-[''] after:absolute after:-bottom-4 after:-right-4 after:w-full after:h-full after:border-r after:border-b after:border-brand/40 after:rounded-sm transition-transform duration-500 hover:-translate-y-2 group">
                 <div id="qrCodeContainer" class="relative z-20 flex items-center justify-center"></div>
                 <!-- Placeholder when empty -->
-                <div class="absolute inset-0 flex flex-col items-center justify-center space-y-3 text-zinc-300 font-mono text-xs tracking-widest uppercase opacity-50 transition-opacity duration-300" id="qrPlaceholder">
-                     <svg class="w-10 h-10" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 4v1m6 11h2m-6 0h-2v4m0-11v3m0 0h.01M12 12h4.01M16 20h4M4 12h4m12 0h.01M5 8h2a1 1 0 001-1V5a1 1 0 00-1-1H5a1 1 0 00-1 1v2a1 1 0 001 1zm14 0h2a1 1 0 001-1V5a1 1 0 00-1-1h-2a1 1 0 00-1 1v2a1 1 0 001 1zM5 20h2a1 1 0 001-1v-2a1 1 0 00-1-1H5a1 1 0 00-1 1v2a1 1 0 001 1z" /></svg>
-                     <span>Idle</span>
+                <div class="absolute inset-0 flex flex-col items-center justify-center space-y-3 text-zinc-300 font-mono text-xs tracking-widest uppercase opacity-50 transition-opacity duration-300"
+                    id="qrPlaceholder">
+                    <svg class="w-10 h-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                            d="M12 4v1m6 11h2m-6 0h-2v4m0-11v3m0 0h.01M12 12h4.01M16 20h4M4 12h4m12 0h.01M5 8h2a1 1 0 001-1V5a1 1 0 00-1-1H5a1 1 0 00-1 1v2a1 1 0 001 1zm14 0h2a1 1 0 001-1V5a1 1 0 00-1-1h-2a1 1 0 00-1 1v2a1 1 0 001 1zM5 20h2a1 1 0 001-1v-2a1 1 0 00-1-1H5a1 1 0 00-1 1v2a1 1 0 001 1z" />
+                    </svg>
+                    <span>Idle</span>
                 </div>
             </div>
-            
-            <a id="downloadLink" href="#" style="display:none;" 
+
+            <a id="downloadLink" href="#" style="display:none;"
                 class="mt-12 px-6 py-3 border border-brand text-brand hover:bg-brand hover:text-zinc-950 font-mono text-[10px] tracking-widest uppercase transition-colors duration-300 rounded-sm relative overflow-hidden flex items-center justify-center gap-2 w-[calc(100%-2rem)] max-w-[240px]">
-                <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" /></svg>
+                <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                </svg>
                 Extract Artifact
             </a>
         </div>
     </div>
-    
+
     <script src="script.js"></script>
     <script>
         // Hide placeholder visually when QR logic executes
-        $('#qrForm').on('submit', function() {
-            setTimeout(() => { if($('#qrCodeContainer').children().length > 0) $('#qrPlaceholder').css('opacity', '0'); }, 100);
+        $('#qrForm').on('submit', function () {
+            setTimeout(() => { if ($('#qrCodeContainer').children().length > 0) $('#qrPlaceholder').css('opacity', '0'); }, 100);
         });
-        $('#applyGradient').on('click', function() {
-            setTimeout(() => { if($('#qrCodeContainer').children().length > 0) $('#qrPlaceholder').css('opacity', '0'); }, 100);
+        $('#applyGradient').on('click', function () {
+            setTimeout(() => { if ($('#qrCodeContainer').children().length > 0) $('#qrPlaceholder').css('opacity', '0'); }, 100);
         });
     </script>
 </body>
+
 </html>
